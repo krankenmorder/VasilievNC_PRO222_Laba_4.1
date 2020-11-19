@@ -16,5 +16,29 @@ namespace LabOOP_4._1
         {
             InitializeComponent();
         }
+
+        class CCircle
+        {
+            public int x, y;
+            public int radius = 25;
+
+            public CCircle()
+            {
+                x = 0;
+                y = 0;
+            }
+
+            public CCircle(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+
+            ~CCircle() 
+            {
+
+            }
+        }
+
     }
 }
