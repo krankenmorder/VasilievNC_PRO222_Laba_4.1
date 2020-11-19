@@ -22,19 +22,37 @@ namespace LabOOP_4._1
             public int x, y;
             public int radius = 25;
 
-            public CCircle()
+            public CCircle() //конструктор по умолчанию
             {
                 x = 0;
                 y = 0;
             }
 
-            public CCircle(int x, int y)
+            public CCircle(int x, int y) //конструктор с параметрами
             {
                 this.x = x;
                 this.y = y;
             }
 
-            ~CCircle() 
+            ~CCircle() //деструктор
+            {
+
+            }
+        }
+
+        class Storage
+        {
+            public CCircle[] objects;
+
+            public Storage(int count)
+            {
+                objects = new CCircle[count];
+                for (int i =0; i<count; ++i)
+                {
+                    objects[i] = null;
+                }
+            }
+            ~Storage()
             {
 
             }
