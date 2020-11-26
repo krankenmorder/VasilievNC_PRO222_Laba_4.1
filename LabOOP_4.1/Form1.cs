@@ -20,7 +20,7 @@ namespace LabOOP_4._1
         class CCircle
         {
             public int x, y;
-            public int radius = 25;
+            public int radius = 50;
 
             public CCircle() //конструктор по умолчанию
             {
@@ -58,5 +58,16 @@ namespace LabOOP_4._1
             }
         }
 
+        private void panelPaint_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelCoordX.Text = e.X.ToString();
+            labelCoordY.Text = e.Y.ToString();
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelCoordX.Text = "0";
+            labelCoordY.Text = "0";
+        }
     }
 }
