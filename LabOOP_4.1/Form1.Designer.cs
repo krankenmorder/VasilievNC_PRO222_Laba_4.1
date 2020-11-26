@@ -35,6 +35,7 @@
             this.labelCoordX = new System.Windows.Forms.Label();
             this.labelCoordY = new System.Windows.Forms.Label();
             this.buttonClearStg = new System.Windows.Forms.Button();
+            this.buttonDeleteActiveStg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelPaint
@@ -51,9 +52,9 @@
             // 
             this.buttonPaint.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonPaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPaint.Location = new System.Drawing.Point(13, 378);
+            this.buttonPaint.Location = new System.Drawing.Point(12, 378);
             this.buttonPaint.Name = "buttonPaint";
-            this.buttonPaint.Size = new System.Drawing.Size(163, 60);
+            this.buttonPaint.Size = new System.Drawing.Size(163, 85);
             this.buttonPaint.TabIndex = 1;
             this.buttonPaint.Text = "Отрисовать объекты хранилища";
             this.buttonPaint.UseVisualStyleBackColor = false;
@@ -61,9 +62,9 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(626, 378);
+            this.buttonClear.Location = new System.Drawing.Point(640, 378);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(162, 60);
+            this.buttonClear.Size = new System.Drawing.Size(148, 85);
             this.buttonClear.TabIndex = 2;
             this.buttonClear.Text = "Очистить полотно";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -103,17 +104,28 @@
             // 
             this.buttonClearStg.Location = new System.Drawing.Point(183, 378);
             this.buttonClearStg.Name = "buttonClearStg";
-            this.buttonClearStg.Size = new System.Drawing.Size(149, 60);
+            this.buttonClearStg.Size = new System.Drawing.Size(149, 85);
             this.buttonClearStg.TabIndex = 6;
             this.buttonClearStg.Text = "Удалить объекты из хранилища";
             this.buttonClearStg.UseVisualStyleBackColor = true;
             this.buttonClearStg.Click += new System.EventHandler(this.buttonClearStg_Click);
             // 
+            // buttonDeleteActiveStg
+            // 
+            this.buttonDeleteActiveStg.Location = new System.Drawing.Point(481, 378);
+            this.buttonDeleteActiveStg.Name = "buttonDeleteActiveStg";
+            this.buttonDeleteActiveStg.Size = new System.Drawing.Size(153, 85);
+            this.buttonDeleteActiveStg.TabIndex = 7;
+            this.buttonDeleteActiveStg.Text = "Удалить выделенные элементы из хранилища";
+            this.buttonDeleteActiveStg.UseVisualStyleBackColor = true;
+            this.buttonDeleteActiveStg.Click += new System.EventHandler(this.buttonDeleteActiveStg_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.Controls.Add(this.buttonDeleteActiveStg);
             this.Controls.Add(this.buttonClearStg);
             this.Controls.Add(this.labelCoordY);
             this.Controls.Add(this.labelCoordX);
@@ -138,6 +150,7 @@
         private System.Windows.Forms.Label labelCoordX;
         private System.Windows.Forms.Label labelCoordY;
         private System.Windows.Forms.Button buttonClearStg;
+        private System.Windows.Forms.Button buttonDeleteActiveStg;
     }
 }
 
