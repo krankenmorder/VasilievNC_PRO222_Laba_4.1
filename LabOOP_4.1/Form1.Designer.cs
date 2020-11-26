@@ -43,6 +43,7 @@
             this.panelPaint.Name = "panelPaint";
             this.panelPaint.Size = new System.Drawing.Size(776, 359);
             this.panelPaint.TabIndex = 0;
+            this.panelPaint.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelPaint_MouseClick);
             this.panelPaint.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelPaint_MouseMove);
             // 
             // buttonPaint
