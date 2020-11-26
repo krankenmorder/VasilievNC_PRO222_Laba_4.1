@@ -22,6 +22,7 @@ namespace LabOOP_4._1
             public int x, y; //координаты круга
             public int radius = 50; //радиус круга
             public Color color = Color.RoyalBlue; //основной цвет круга
+            public bool IsDrawed = true; //отрисован ли круг на полотне
 
             public CCircle() //конструктор по умолчанию
             {
@@ -43,11 +44,9 @@ namespace LabOOP_4._1
 
         private void Paint(Color color,ref Storage storage, int index)
         {
-            Pen pen = new Pen(color, 5); //инициалзация "карандаша" для рисования
+            Pen pen = new Pen(color, 5); //инициалзация "карандаша" для рисования (цвет и ширина контура)
             panelPaint.CreateGraphics().DrawEllipse(pen, storage.objects[index].x, storage.objects[index].y, storage.objects[index].radius, storage.objects[index].radius);
         }
-
-
 
         class Storage  //класс-хранилище
         {
@@ -74,6 +73,21 @@ namespace LabOOP_4._1
             ~Storage() //деструктор
             {
 
+            }
+
+            public int Occupied(int size) //количество занятых мест в хранилище
+            {
+                int count_occupied = 0;
+                for (int i = 0; i < size; ++i)
+                    if (!CheckEmpty(i))
+                        ++count_occupied;
+                return count_occupied;
+            }
+            public bool CheckEmpty(int index) //проверка на занятую ячейку в хранилище
+            {   
+                if (objects[index] == null)
+                    return true;
+                else return false;
             }
 
             public void AddObjectStg(int index, ref CCircle obj, int count, ref int indexin) //добавить объект в хранилище
@@ -131,6 +145,42 @@ namespace LabOOP_4._1
             index++;
         }
 
+        private void buttonClear_Click(object sender, EventArgs e) //очистить полотно
+        {
+            panelPaint.Refresh();
+            for (int i = 0; i < kol; ++i)
+            {
+                if (!stg.CheckEmpty(i))
+                {  
+                    stg.objects[i].IsDrawed = false;
+                }
+            }
+        }
+
+        private void buttonClearStg_Click(object sender, EventArgs e) //удалить объекты из хранилища
+        {
+            for (int i = 0; i < kol; ++i)
+            {
+                stg.objects[i] = null;
+            }
+            index = 0;
+        }
+
+        private void buttonPaint_Click(object sender, EventArgs e)
+        {
+            panelPaint.Refresh();
+            if (stg.Occupied(kol) != 0)
+            {
+                for (int i = 0; i < kol; ++i)
+                {
+                    if (!stg.CheckEmpty(i))
+                    {   // Меняем is_drawed на true
+                        stg.objects[i].IsDrawed = true;
+                    }
+                    Paint(Color.RoyalBlue, ref stg, i);
+                }
+            }
+        }
     }
 
 }

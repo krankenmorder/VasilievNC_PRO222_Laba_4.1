@@ -34,6 +34,7 @@
             this.labelCoord = new System.Windows.Forms.Label();
             this.labelCoordX = new System.Windows.Forms.Label();
             this.labelCoordY = new System.Windows.Forms.Label();
+            this.buttonClearStg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelPaint
@@ -56,6 +57,7 @@
             this.buttonPaint.TabIndex = 1;
             this.buttonPaint.Text = "Отрисовать объекты хранилища";
             this.buttonPaint.UseVisualStyleBackColor = false;
+            this.buttonPaint.Click += new System.EventHandler(this.buttonPaint_Click);
             // 
             // buttonClear
             // 
@@ -65,6 +67,7 @@
             this.buttonClear.TabIndex = 2;
             this.buttonClear.Text = "Очистить полотно";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // labelCoord
             // 
@@ -96,11 +99,22 @@
             this.labelCoordY.Text = "0";
             this.labelCoordY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonClearStg
+            // 
+            this.buttonClearStg.Location = new System.Drawing.Point(183, 378);
+            this.buttonClearStg.Name = "buttonClearStg";
+            this.buttonClearStg.Size = new System.Drawing.Size(149, 60);
+            this.buttonClearStg.TabIndex = 6;
+            this.buttonClearStg.Text = "Удалить объекты из хранилища";
+            this.buttonClearStg.UseVisualStyleBackColor = true;
+            this.buttonClearStg.Click += new System.EventHandler(this.buttonClearStg_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonClearStg);
             this.Controls.Add(this.labelCoordY);
             this.Controls.Add(this.labelCoordX);
             this.Controls.Add(this.labelCoord);
@@ -123,6 +137,7 @@
         private System.Windows.Forms.Label labelCoord;
         private System.Windows.Forms.Label labelCoordX;
         private System.Windows.Forms.Label labelCoordY;
+        private System.Windows.Forms.Button buttonClearStg;
     }
 }
 
